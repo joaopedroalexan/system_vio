@@ -16,7 +16,7 @@
       <!-- Div usada para agrupar a logo e o título, facilitando o estilo com flexbox -->
       <div class="logo">
         <!-- Logo do site inserida com a tag <img>, que exibe uma imagem -->
-        <img src="1090831.png" alt="Logo do site" />
+        <img src="ingresso.png" alt="Logo do site" />
         <!-- Título principal do site, exibido dentro do cabeçalho -->
         <h1>IngressosFácil</h1>
       </div>
@@ -59,19 +59,37 @@
         </form>
       </section>
       <section>
-        <h2>Usuarios cadastrados</h2>
-        <ul id="user-list"></ul>
+        <!-- Lista para exibir os usuários cadastrados -->
+        <h2>Usuários Cadastrados</h2>
+        <ul id="user_list"></ul>
       </section>
+
       <section>
-        <h2>Usuarios Cadatrados via tabela</h2>
-        <table id="user-table">
+        <h2>Usuários Cadastrados via Tabela</h2>
+        <table id="user_table">
           <thead>
-            <th>Name</th>
-            <th>E-mail</th>
+            <th>Nome</th>
             <th>CPF</th>
+            <th>E-Mail</th>
+
+            <tbody id="user_list_tabela">
+              <!-- Os usuários serão adicionados aqui -->
+            </tbody>
           </thead>
-          <tbody id="user-list-tabela">
-            <!-- os usuarios serão adicionados aqui -->
+        </table>
+      </section>
+
+      <section>
+        <h2>Organizadores Cadastrados via Tabela</h2>
+        <table id="org_table">
+          <thead>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+          </thead>
+
+          <tbody id="org_lista_tabela">
+
           </tbody>
         </table>
       </section>

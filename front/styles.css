@@ -17,7 +17,7 @@ body {
 
 /* Estilo do cabeçalho */
 header {
-  background-color: #4caf50; /* Define a cor de fundo do cabeçalho */
+  background-color: #6fadd4; /* Define a cor de fundo do cabeçalho */
   padding: 20px; /* Espaçamento interno */
   text-align: center; /* Centraliza o texto */
   color: white; /* Define a cor do texto no cabeçalho */
@@ -115,80 +115,55 @@ footer {
   bottom: 0; /* Posiciona o rodapé na parte inferior da página */
 }
 
-/* Estilo para o botão no header */
-.botao-header {
-  background-color: #fff; /* Cor de fundo branca */
-  color: #4caf50; /* Cor do texto igual à cor de fundo do header */
-  border: 2px solid #4caf50; /* Borda verde */
-  padding: 10px 20px; /* Espaçamento interno do botão */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Mudança do cursor ao passar sobre o botão */
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
-  margin-top: 20px; /* Espaçamento superior */
+#user_list li {
+  list-style-type: none;
+  padding: 2%;
+  border: solid 1px black;
+  text-align: center;
+  margin-bottom: 1%;
+  background-color: #54e80a;
+  border-radius: 8px;
+  color: white;
 }
 
-/* Estilo ao passar o mouse sobre o botão */
-.botao-header:hover {
-  background-color: #101010; /* Altera a cor de fundo para verde */
-  color: #fff; /* Altera a cor do texto para branco */
+#user_table th{
+  border: 1px solid black;
+  padding: 0.5% 0%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #4ee40e;
+  color: white;
 }
 
-/* Estilos da seção de usuários cadastrados */
-#user-list {
-  list-style: none; /* Remove os marcadores da lista */
-  padding: 0; /* Remove o preenchimento padrão */
-  max-width: 600px; /* Define uma largura máxima para a lista */
-  margin: 20px auto; /* Centraliza a lista horizontalmente e adiciona espaço acima e abaixo */
-  background-color: #fff; /* Cor de fundo branca */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+#user_list_tabela td{
+  list-style-type: none;
+  padding: 2% 0%;
+  width: 100%;
+  border: solid 1px black;
+  text-align: center;
+  background-color: #0ae911;
+  border-radius: 8px;
+  color: white;
+  margin: 2%;
 }
 
-/* Estilo para o título da seção de usuários */
-section h2 {
-  color: #00796b; /* Cor específica para o título */
-  margin-bottom: 15px; /* Espaçamento inferior */
+#org_table th{
+  border: 1px solid black;
+  padding: 0.5% 0%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #5be919;
+  color: white;
 }
 
-/* Estilo de cada item da lista de usuários */
-#user-list li {
-  padding: 10px; /* Espaçamento interno para os itens da lista */
-  border-bottom: 1px solid #ddd; /* Borda inferior cinza clara entre os itens */
-}
-
-/* Estilo do último item da lista */
-#user-list li:last-child {
-  border-bottom: none; /* Remove a borda do último item */
-}
-
-/* Estilo ao passar o mouse sobre os itens da lista */
-#user-list li:hover {
-  background-color: #f1f1f1; /* Altera a cor de fundo ao passar o mouse */
-}
-
-/*Tabela*/
-table {
-  width: 100%; /* Largura total da tabela */
-  border-collapse: collapse; /* Remove espaços entre bordas */
-  margin-top: 20px; /* Espaçamento superior */
-}
-
-th, td {
-  border: 1px solid #ddd; /* Borda cinza clara */
-  padding: 8px; /* Espaçamento interno */
-  text-align: left; /* Alinhamento à esquerda */
-}
-
-th {
-  background-color: #4caf50; /* Cor de fundo para cabeçalho */
-  color: white; /* Cor do texto no cabeçalho */
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2; /* Cor de fundo para linhas pares */
-}
-
-tr:hover {
-  background-color: #ddd; /* Cor de fundo ao passar o mouse */
+#org_lista_tabela td{
+  list-style-type: none;
+  padding: 2% 0%;
+  width: 100%;
+  border: solid 1px black;
+  text-align: center;
+  background-color: #44ec1a;
+  border-radius: 8px;
+  color: white;
+  margin: 2%;
 }
