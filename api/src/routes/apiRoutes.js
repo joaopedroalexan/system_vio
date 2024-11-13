@@ -20,7 +20,7 @@ router.get('/Event', EventControll.GetAllEvents)
 router.put('/Event', EventControll.updateEvents)
 router.delete('/Event:id', EventControll.deleteEvents)
 router.get('/evento/data', EventControll.GetEventsPorData)
-router.get('evento/diasEventos', EventControll.GetNext7DaysEvents)
+router.get("/evento/semana/:data", EventControll.GetNext7DaysEvents);
 
 router.post("/ingresso/", ingressoControll.createIngresso);
 router.get("/ingresso/", ingressoControll.getAllIngresso);

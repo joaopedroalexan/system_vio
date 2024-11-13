@@ -186,42 +186,24 @@ module.exports = class EventControll {
     }
   }
   static async GetNext7DaysEvents(req, res) {
-    // Data inicial: 17 de novembro de 2024
-    const inputDate = new Date('2024-11-17'); // Definindo diretamente o dia 17/11/2024
-    console.log('Data inicial (17/11/2024):', inputDate); // Mostra a data inicial no terminal
-  
-    // Data de 7 dias após o dia 17
-    const startDate = inputDate.toISOString().split('T')[0]; // "2024-11-17"
-    console.log('Data de início do intervalo (startDate):', startDate); // Mostra a data de início
-  
-    const endDate = new Date(inputDate);
-    endDate.setDate(inputDate.getDate() + 7); // Adiciona 7 dias ao dia 17
-    const endDateString = endDate.toISOString().split('T')[0]; // "2024-11-24"
-    console.log('Data final do intervalo (endDate):', endDateString); // Mostra a data final (7 dias depois)
-  
-    const query = `SELECT * FROM evento WHERE data_hora BETWEEN ? AND ?`;
-    console.log('Query SQL:', query); // Mostra a consulta SQL no terminal
-  
+    let diaInicial = req.params.data;
+    diaInicial = new Date(diaInicial).toISOString().split("T")[0];
+
+    const query = `SELECT * FROM evento WHERE TIMESTAMPDIFF(DAY, ?, data_hora) BETWEEN 0 AND 6 ORDER BY data_hora ASC`;
+
     try {
-      // Executa a consulta passando as datas de startDate e endDate
-      connect.query(query, [startDate, endDateString], (err, results) => {
+      connect.query(query, diaInicial, (err, results) => {
         if (err) {
-          console.error('Erro ao executar a consulta:', err); // Mostra o erro no terminal, se houver
-          return res.status(500).json({ error: "Erro ao buscar eventos" });
+          console.error(err);
+          return res.status(500).json({ error: "Erro Interno de Servidor" });
         }
-  
-        console.log('Resultados da consulta:', results); // Mostra os resultados da consulta no terminal
-  
-        // Retorna os eventos encontrados no intervalo de 7 dias
-        return res.status(200).json({
-          message: "Eventos encontrados com sucesso!",
-          events: results, // Retorna os eventos encontrados
-        });
+        return res
+          .status(200)
+          .json({ message: "Busca concluida:", eventos: results });
       });
     } catch (error) {
-      console.error('Erro ao buscar eventos:', error); // Mostra qualquer erro que ocorrer no bloco try
-      return res.status(500).json({ error: "Erro ao buscar eventos" });
+      console.error(error);
+      return res.status(500).json({ error: "Erro Interno de Servidor" });
     }
   }
-  
-  } ;
+};
